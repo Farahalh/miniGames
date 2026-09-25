@@ -5,10 +5,17 @@
 # If the guess is wrong the game will continue
 # If the guess is correct the game will end and the player will be notified of how mny tries the had before gettign it right 
 
-correctAnswer = 24;
+correctAnswer = 24
 
-playerGuess = input("Please enter a numeric value that you think is the correct answer: ");
+userInput = int(input("Please enter a numeric value that you think is the correct answer: "))
 
-numericValue = int(playerGuess)
+print(userInput)
 
-print(type(numericValue))
+if (userInput == correctAnswer) :
+    print("Congratulations, you guessed the correct number!") 
+    
+elif (userInput < correctAnswer) :
+    print("Number guessed is too low, try again!")
+
+elif (userInput > correctAnswer) :
+    print("Number guessed is too high, try again!")
