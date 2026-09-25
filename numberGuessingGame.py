@@ -7,15 +7,16 @@
 
 correctAnswer = 24
 
-userInput = int(input("Please enter a numeric value that you think is the correct answer: "))
-
-print(userInput)
-
-if (userInput == correctAnswer) :
-    print("Congratulations, you guessed the correct number!") 
-    
-elif (userInput < correctAnswer) :
-    print("Number guessed is too low, try again!")
-
-elif (userInput > correctAnswer) :
-    print("Number guessed is too high, try again!")
+while True:
+    try:
+        userInput = int(input("Please enter a numeric value that you think is the correct answer: "))
+        number = int(userInput)
+        if number < correctAnswer:
+            print("Number guessed is too low, try again!")
+        elif number > correctAnswer:
+           print("Number guessed is too high, try again!")
+        else:
+            print("Congratulations, you guessed the correct number!")
+            break
+    except ValueError:
+        print("Invalid input, please enter a valid number.")
