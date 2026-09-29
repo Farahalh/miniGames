@@ -1,0 +1,14 @@
+# Hangman
+# Save a text value as correctAnswer in a variable
+# The player, through the console, try to guess the correct word
+# For every guess the player gets to see the guess, whether it is correct or not
+# For every guess the player will see all wrong and right guesses that was previously done
+# For every guess the player will know how close they are to losing
+# For every wrong guess, the player will get closer to losing
+# If all the unique string characters guessed are correct, the player will know they have won and the game will end
+# If the number of attempts are reached the player will know they have lost and the game will end.
+
+correctAnswer = "farah"
+guessedLetters = []
+maxAttempts = 6
+wrongGuesses = 0
