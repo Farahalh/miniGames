@@ -32,6 +32,14 @@ while wrongGuesses < maxAttempts:
 
     guess = input("Guess a letter: ").lower()
 
+    if len(guess) != 1 or not guess.isalpha():
+        print("Please enter one letter.")
+        continue
+
+    if guess in guessedLetters:
+        print("You already guessed that letter.")
+        continue
+
     guessedLetters.append(guess)
 
     if guess in correctAnswer:
