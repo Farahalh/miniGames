@@ -12,3 +12,35 @@ correctAnswer = "farah"
 guessedLetters = []
 maxAttempts = 6
 wrongGuesses = 0
+
+while wrongGuesses < maxAttempts:
+    display = ""
+
+    for letter in correctAnswer:
+        if letter in guessedLetters:
+            display += letter + " "
+        else:
+            display += "_ "
+
+    print([wrongGuesses])
+    print("Word:", display)
+
+    if "_" not in display:
+        print("Congratulations! You won!")
+        print("The word was:", correctAnswer)
+        break
+
+    guess = input("Guess a letter: ").lower()
+
+    guessedLetters.append(guess)
+
+    if guess in correctAnswer:
+        print("Correct guess!")
+    else:
+        wrongGuesses += 1
+        print("Wrong guess!")
+
+else:
+    print([wrongGuesses])
+    print("Game Over!")
+    print("The correct word was:", correctAnswer)
