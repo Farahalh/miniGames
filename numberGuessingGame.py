@@ -9,6 +9,8 @@ attempts = 10
 correctAnswer = 24
 tries = 0
 
+print("Welcome to Guess the Number!")
+
 while tries < attempts:
     try:
         userInput = int(input("Please enter a numeric value that you think is the correct answer: "))
