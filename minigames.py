@@ -49,3 +49,35 @@ else:
     print([wrongGuesses])
     print("Game Over!")
     print("The correct word was:", word)
+
+
+    numbers = [2, 1, 7, 5, 8, 3, 6, 4, 9]
+
+number = random.choice(numbers)
+
+maxAttempts = 10
+attempts = 0
+
+print("Welcome to Guess the Number!")
+
+while attempts < maxAttempts:
+    try:
+        userInput = int(input("Please enter a numeric value betweeon 0 - 10: "))
+        attempts += 1
+
+        if userInput < number:
+            print("Number guessed is too low, try again!")
+
+        elif userInput > number:
+           print("Number guessed is too high, try again!")
+
+        else:
+            print(f"Congratulations, you guessed the correct number! It only took you {attempts} tries!")
+            break
+
+    except ValueError:
+        print("Invalid input, please enter a valid number.")
+
+else:
+    print("Game Over!")
+    print(f"The correct number was {number}.")
