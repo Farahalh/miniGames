@@ -69,20 +69,31 @@ else:
     print("The correct word was:", word)
 
 
-    numbers = [2, 1, 7, 5, 8, 3, 6, 4, 9]
-
-
-
-number = random.choice(numbers)
-
-maxAttempts = 10
-attempts = 0
-
 print("Welcome to Guess the Number!")
+print("Choose a level:")
+print("1. Easy")
+print("2. Hard")
+
+level = input("Choose a level: ")
+
+if level == "1":
+    maxNumber = 10
+    maxAttempts = 10
+
+elif level == "2":
+    maxNumber = 100
+    maxAttempts = 5
+
+else:
+    print("Invalid choice.")
+
+number = random.randint(0, maxNumber)
+
+attempts = 0
 
 while attempts < maxAttempts:
     try:
-        userInput = int(input("Please enter a numeric value betweeon 0 - 10: "))
+        userInput = int(input("Please enter your guess: "))
         attempts += 1
 
         if userInput < number:
