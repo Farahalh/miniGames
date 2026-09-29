@@ -8,15 +8,21 @@
 # If all the unique string characters guessed are correct, the player will know they have won and the game will end
 # If the number of attempts are reached the player will know they have lost and the game will end.
 
-correctAnswer = "farah"
+import random
+
+words = ["red", "green", "yellow", "orange", "pink", "blue"]
+
+word = random.choice(words)
 guessedLetters = []
 maxAttempts = 6
 wrongGuesses = 0
 
+print("Welcome to the Hangman Game!")
+
 while wrongGuesses < maxAttempts:
     display = ""
 
-    for letter in correctAnswer:
+    for letter in word:
         if letter in guessedLetters:
             display += letter + " "
         else:
@@ -28,7 +34,7 @@ while wrongGuesses < maxAttempts:
 
     if "_" not in display:
         print("Congratulations! You won!")
-        print("The word was:", correctAnswer)
+        print("The word is:", word)
         break
 
     guess = input("Guess a letter: ").lower()
@@ -43,7 +49,7 @@ while wrongGuesses < maxAttempts:
 
     guessedLetters.append(guess)
 
-    if guess in correctAnswer:
+    if guess in word:
         print("Correct guess!")
     else:
         wrongGuesses += 1
@@ -52,4 +58,4 @@ while wrongGuesses < maxAttempts:
 else:
     print([wrongGuesses])
     print("Game Over!")
-    print("The correct word was:", correctAnswer)
+    print("The correct word was:", word)
