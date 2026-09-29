@@ -1,13 +1,31 @@
 import random
 
-words = ["red", "green", "yellow", "orange", "pink", "blue"]
+words = {
+    "easy": ["red", "blue", "pink"],
+    "hard": ["green", "yellow", "orange", "purple"]
+}
 
-word = random.choice(words)
+print("Welcome to the Hangman Game!")
+print("Choose a level:")
+print("1. Easy")
+print("2. Hard")
+
+level = input("Choose a level: ")
+
+if level == "1":
+    word = random.choice(words["easy"])
+    maxAttempts = 8
+
+elif level == "2":
+    word = random.choice(words["hard"])
+    maxAttempts = 5
+
+else:
+    print("Invalid choice.")
+
 guessedLetters = []
 maxAttempts = 6
 wrongGuesses = 0
-
-print("Welcome to the Hangman Game!")
 
 while wrongGuesses < maxAttempts:
     display = ""
@@ -52,6 +70,8 @@ else:
 
 
     numbers = [2, 1, 7, 5, 8, 3, 6, 4, 9]
+
+
 
 number = random.choice(numbers)
 
