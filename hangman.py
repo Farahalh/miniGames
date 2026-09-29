@@ -22,7 +22,8 @@ while wrongGuesses < maxAttempts:
         else:
             display += "_ "
 
-    print([wrongGuesses])
+    print("Wrong guess:", wrongGuesses)
+    print("Guessed letters:", guessedLetters)
     print("Word:", display)
 
     if "_" not in display:
