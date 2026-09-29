@@ -5,23 +5,35 @@
 # If the guess is wrong the game will continue
 # If the guess is correct the game will end and the player will be notified of how many tries they had before getting it right 
 
-attempts = 10
-correctAnswer = 24
-tries = 0
+import random
+
+numbers = [2, 1, 7, 5, 8, 3, 6, 4, 9]
+
+number = random.choice(numbers)
+
+maxAttempts = 10
+attempts = 0
 
 print("Welcome to Guess the Number!")
 
-while tries < attempts:
+while attempts < maxAttempts:
     try:
-        userInput = int(input("Please enter a numeric value that you think is the correct answer: "))
-        number = int(userInput)
-        if number < correctAnswer:
+        userInput = int(input("Please enter a numeric value betweeon 0 - 10: "))
+        attempts += 1
+
+        if userInput < number:
             print("Number guessed is too low, try again!")
-        elif number > correctAnswer:
+
+        elif userInput > number:
            print("Number guessed is too high, try again!")
+
         else:
-            print(f"Congratulations, you guessed the correct number! It only took you {tries} tries!")
+            print(f"Congratulations, you guessed the correct number! It only took you {attempts} tries!")
             break
-        tries += 1
+
     except ValueError:
         print("Invalid input, please enter a valid number.")
+
+else:
+    print("Game Over!")
+    print(f"The correct number was {number}.")
